@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/GrassTileIso.png" type="Texture" id=1]
+[ext_resource path="res://Assets/DirtTileIso.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DirtTileIso" type="Sprite" parent="."]
+position = Vector2( 439.884, 286.403 )
+texture = ExtResource( 2 )
+
+[node name="GrassTileIso" type="Sprite" parent="."]
+position = Vector2( 616.861, 296.595 )
+texture = ExtResource( 1 )
