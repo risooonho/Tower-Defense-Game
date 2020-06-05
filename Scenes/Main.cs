@@ -16,14 +16,17 @@ public class Main : Node
 		enemySpawnTimer.Start(); 
 	}
 
-	private void enemySpawner()
+	private void enemySpawner() //Places an enemy every two seconds 
 	{
+		if(enemyNumber > 0)
+		{
 		Path2D enemyPath = (Path2D)GetNode("Path2D");
 		PackedScene enemy = (PackedScene)ResourceLoader.Load("res://Scenes/Enemy.tscn"); 
 		var Enemy = enemy.Instance(); 
-		enemyPath.AddChild(Enemy); 
-		//PathFollow2D enemyPathFollow = (PathFollow2D)GetNode("EnemyPathFollow");  
-		//enemyPath.AddChild(enemyPathFollow);     
+		enemyPath.AddChild(Enemy);  
+		}
+		enemyNumber -= 1; 
+		   
 	} 
 	private void OnEnemySpawnTimerTimeout()
 	{

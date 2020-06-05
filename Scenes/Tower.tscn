@@ -13,3 +13,6 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="ProjectileSpawnPoint" type="Position2D" parent="."]
+position = Vector2( -16.6249, 9.20132 )
