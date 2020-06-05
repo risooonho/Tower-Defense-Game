@@ -5,7 +5,7 @@ public class Main : Node
 {
 	[Export]
 	
-	private PackedScene _Enemy = (PackedScene)ResourceLoader.Load("res://Scenes/Enemy.tscn"); 
+	 
 	int enemyNumber = 5; 
 	int resource = 10; 
 	Vector2 mousePosition = new Vector2();
@@ -18,9 +18,12 @@ public class Main : Node
 
 	private void enemySpawner()
 	{
-
-		var enemyInstance = (Enemy)_Enemy.Instance();
-	  	AddChild(enemyInstance);   
+		Path2D enemyPath = (Path2D)GetNode("Path2D");
+		PackedScene enemy = (PackedScene)ResourceLoader.Load("res://Scenes/Enemy.tscn"); 
+		var Enemy = enemy.Instance(); 
+		enemyPath.AddChild(Enemy); 
+		//PathFollow2D enemyPathFollow = (PathFollow2D)GetNode("EnemyPathFollow");  
+		//enemyPath.AddChild(enemyPathFollow);     
 	} 
 	private void OnEnemySpawnTimerTimeout()
 	{
