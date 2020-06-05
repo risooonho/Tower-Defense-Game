@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Resources/Terrain.tres" type="TileSet" id=1]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 20.2494, 228.791, 0, 0, 0, 0, 255.476, 350.842, 0, 0, 0, 0, 555.057, 194.949, 0, 0, 0, 0, 516.777, 176.087, 0, 0, 0, 0, 596.11, 138.917, 0, 0, 0, 0, 511.229, 92.8699, 0, 0, 0, 0, 610.535, 41.2754, 0, 0, 0, 0, 1049.37, 263.742 )
-}
 
 [node name="Map" type="Node2D"]
 
@@ -20,11 +15,3 @@ tile_data = PoolIntArray( -1048561, 1, 0, -1048560, 1, 0, -983026, 1, 0, -983025
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 1 )
-
-[node name="EnemyPathFollow" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 20.2494, 228.791 )
-rotation = 0.478629
-loop = false
