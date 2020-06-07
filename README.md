@@ -1,2 +1,2 @@
 # Tower-Defense-Game
-A basic isometric 2D tower defense game written in C# and made using the Godot game engine.  Made to learn how to create and use isometric Tile Maps as well as grasp isometric movement. Tiles and assets created using Adobe Illustrator. 
+A basic Top Down 2D tower defense game written in C# and made using the Godot game engine.  Made to learn how to create and use Tile Maps and Tile Sets as well more advanced aspects of C#. Tiles and assets created using Adobe Illustrator. 
