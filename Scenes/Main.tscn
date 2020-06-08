@@ -5,15 +5,20 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -32.3894, 196.659, 0, 0, 0, 0, 260.12, 346.339, 0, 0, 0, 0, 553.157, 200.348, 0, 0, 0, 0, 521.008, 172.414, 0, 0, 0, 0, 600.591, 145.535, 0, 0, 0, 0, 517.845, 90.1955, 0, 0, 0, 0, 608.497, 45.3967, 0, 0, 0, 0, 1048.05, 264.647 )
+"points": PoolVector2Array( 0, 0, 0, 0, -47.1539, 166.449, 0, 0, 0, 0, 277.034, 167.845, 0, 0, 0, 0, 279.13, 483.37, 0, 0, 0, 0, 591.441, 479.181, 0, 0, 0, 0, 591.441, 166.449, 0, 0, 0, 0, 1030.91, 162.959 )
 }
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
 
-[node name="Map" parent="." instance=ExtResource( 1 )]
+[node name="WorldTileMap" parent="." instance=ExtResource( 1 )]
 
-[node name="NewGame" type="Timer" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 1.17957, -12.9612 )
+scale = Vector2( 1.02618, 1.02709 )
+curve = SubResource( 1 )
+
+[node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 autostart = true
@@ -21,7 +26,9 @@ autostart = true
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 1 )
-[connection signal="timeout" from="NewGame" to="." method="OnNewGameTimeout"]
+[node name="TowerTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="timeout" from="StartTimer" to="." method="OnStartTimerTimeout"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="OnEnemySpawnTimerTimeout"]
+[connection signal="timeout" from="TowerTimer" to="." method="OnTowerTimerTimeout"]
