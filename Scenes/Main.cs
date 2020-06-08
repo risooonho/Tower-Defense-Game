@@ -26,7 +26,7 @@ public class Main : Node
 			PackedScene enemy = (PackedScene)ResourceLoader.Load("res://Scenes/Enemy.tscn"); 
 			var Enemy = enemy.Instance(); 
 			enemyPath.AddChild(Enemy);  
-			GD.Print(enemyCounter); 
+			//GD.Print(enemyCounter); 
 		}
 	}
 	private void OnEnemySpawnTimerTimeout()
@@ -42,7 +42,7 @@ public class Main : Node
 	{
 		if(Input.IsActionJustPressed("LeftClick"))
 		{
-			GD.Print(resource); 
+			//GD.Print(resource); 
 			if(resource > 0)
 			{
 			PackedScene tower = (PackedScene)ResourceLoader.Load("res://Scenes/Tower.tscn");

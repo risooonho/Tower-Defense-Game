@@ -5,9 +5,12 @@ using System;
 // 1 = RoadTile
 public class Tower : Area2D
 {
+	private int rotationSpeed = 5; 
 	Vector2 tileLocation = new Vector2(); 
 
 	Vector2 cursorLocation = new Vector2();
+
+	
 
 	public override void _Ready()
 	{
@@ -28,5 +31,25 @@ public class Tower : Area2D
 			Sprite towerSprite = (Sprite)GetNode("Sprite");
 			towerSprite.QueueFree(); 
 		}	
+	}
+
+	private void Shoot()
+	{
+		var projectile = (PackedScene)ResourceLoader.Load("res://Scenes/Projectile.tscn");
+	  	var _projectile = projectile.Instance();
+	 	AddChild(_projectile);
+		
+	}
+
+	public override void _Process(float delta)
+	{
+		Node2D pointer = (Node2D)GetNode("Pointer"); 
+		pointer.Rotation += rotationSpeed * delta; 
+		RayCast2D rayCast2D = (RayCast2D)GetNode("Pointer/RayCast2D"); 
+		if(rayCast2D.IsColliding())
+		{
+			Shoot(); 
+		}
+	
 	}
 }
