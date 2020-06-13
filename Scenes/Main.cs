@@ -42,7 +42,7 @@ public class Main : Node
 	{
 		if(Input.IsActionJustPressed("LeftClick"))
 		{
-			//GD.Print(resource); 
+			GD.Print(resource); 
 			if(resource > 0)
 			{
 			PackedScene tower = (PackedScene)ResourceLoader.Load("res://Scenes/Tower.tscn");
